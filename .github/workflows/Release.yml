@@ -11,7 +11,10 @@ on:
         description: 'Git Tag to checkout'
         required: true
         type: string
-
+        
+env:
+  NDK_VERSION: r26d
+  
 jobs:
   release:
     runs-on: macOS-12
