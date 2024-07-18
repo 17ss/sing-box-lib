@@ -37,7 +37,6 @@ jobs:
           gomobile init
           
       - name: Setup NDK
-        if: startsWith(matrix.platform,'android')
         uses: nttld/setup-ndk@v1
         id: setup-ndk
         with:
