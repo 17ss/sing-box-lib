@@ -36,6 +36,15 @@ jobs:
           make lib_install
           gomobile init
           
+      - name: Setup NDK
+        if: startsWith(matrix.platform,'android')
+        uses: nttld/setup-ndk@v1
+        id: setup-ndk
+        with:
+          ndk-version: ${{ env.NDK_VERSION }}
+          add-to-path: true
+          link-to-sdk: true
+          
       - name: Build xcframework
         run: |
           cd box
